@@ -1,0 +1,28 @@
+.welcome-msg {
+    position: relative;
+    /* max-width: 800px; Maximum width */
+    margin: 0 auto; /* Center it */
+    margin-top: 3%;
+  }
+  
+  .welcome-msg .content {
+
+    position: absolute; /* Position the background text */
+    top: 0; /* At the bottom. Use top:0 to append it to the top */  
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 2%;
+    width: 50%;
+    height: 30%;
+    padding: 30px; /* Some padding */
+  }
+
+.footer_text{
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom:1%;
+    color: navy;
+}

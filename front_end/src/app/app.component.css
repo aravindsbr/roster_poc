@@ -1,0 +1,50 @@
+.mat-toolbar{
+    background-color: #3f51b5;        
+}
+
+.mat-raised-button{
+    background-color: #3f51b5;
+    color: white;  
+    font-size:medium;
+    font-weight: 500; 
+}
+
+.toolbar_text{
+    margin-left: 36%;
+    font-size: xx-large;
+    font-style: normal;
+    font-weight: bolder;  
+    color: white;
+}
+
+#accountcircle{
+    Margin-left: 40%;
+    color:white;
+    font-size: 36px;
+}
+
+#home{
+    margin-top: 2%;
+    margin-left:2%;
+  
+}
+
+#roster{
+    margin-left: 3%;
+    margin-top: 2%;
+    
+}
+
+#shiftallowance{
+    margin-left: 3%;
+    
+}
+
+.footer_text{
+    margin-left: 42%;
+    font-size: large;
+    font-style: normal;
+    font-weight: normal;  
+    color: midnightblue; 
+    margin-bottom: 1%;
+}

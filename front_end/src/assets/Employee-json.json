@@ -1,0 +1,31 @@
+{
+    "Employees": [
+      {
+        "EId": "11274437",
+        "firstName": "Wilson",
+        "lastName": "Joseph",
+        "Project": "Cigna",
+        "Location": "Chennai-CDC2D",
+        "phoneNumber": "9047153336",
+        "emailAddress": "w.raj.joseph.peter@accenture.com"
+      },
+      {
+        "EId": "12345123",
+        "firstName": "John",
+        "lastName": "Cena",
+        "Project": "WWE",
+        "Location": "USA",
+        "phoneNumber": "7894561230",
+        "emailAddress": "cena@wwe.com"
+      },
+      {
+        "EId": "89745621",
+        "firstName": "Jordan",
+        "lastName": "Rai",
+        "Project": "fizer",
+        "Location": "Mumbai",
+        "phoneNumber": "9547821036",
+        "emailAddress": "rai.jordan@accenture.com"
+      }
+    ]
+  }

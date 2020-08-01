@@ -1,0 +1,59 @@
+<div>
+  <p class="text">Add new employee details</p>
+
+<form class="input_form" [formGroup]="form" (ngSubmit)="Onsubmitform()">
+
+  <mat-form-field id="name" appearance="outline">
+    <mat-label>Employee Name</mat-label>
+    <input matInput formControlName="name" required>
+  </mat-form-field>
+
+  <mat-form-field id="phone_no" appearance="outline" style="margin-left: 10%;" >
+    <mat-label>Contact number</mat-label>
+    <input matInput formControlName="phone_no" type="number" maxlength="10" required> 
+  </mat-form-field>
+
+  <mat-form-field id="email" appearance="outline" style="margin-left: 10%;">
+    <mat-label>Email ID</mat-label>
+    <input matInput formControlName="email" placeholder="xyz@domain.com" required>
+  </mat-form-field><br>
+
+  <mat-form-field id="city"  appearance="outline">
+    <mat-label>City</mat-label>
+    <mat-select formControlName="city" required>
+      <mat-option>-- Select Vertical --</mat-option>
+      <mat-option value="Chennai">Chennai</mat-option>
+      <mat-option value="Madurai">Madurai</mat-option>
+      <mat-option value="Coimbatore">Coimbatore</mat-option>
+      <mat-option value="Trichy">Trichy</mat-option>
+      <mat-option value="Ooty">Ooty</mat-option>
+      <mat-option value="Others">Others</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field id="dob" appearance="outline" style="margin-left: 10%;">
+    <mat-label>Date of birth</mat-label>
+    <input type="date" formControlName="dob" matInput>
+    <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi #picker></mat-datepicker> -->
+  </mat-form-field>
+  <br>
+
+  <mat-radio-group id="status" formControlName="status" required>
+    <mat-label>Status:</mat-label>
+    <div style="margin-left: 2%;">
+    <mat-radio-button value="Active">Active</mat-radio-button>
+    <mat-radio-button style="margin-left: 2%;" value="Inactive">Inactive</mat-radio-button>
+    </div>
+  </mat-radio-group><br>
+
+  
+<div>
+  <button mat-raised-button id="save-submit" ><mat-icon>save</mat-icon> Save</button>
+</div><br>
+
+</form>
+
+<router-outlet></router-outlet>
+
+</div>
