@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable, from, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { Myinterface } from './myinterface';
-import {Router} from '@angular/router';
-
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +8,7 @@ import {Router} from '@angular/router';
 
 export class MyserviceService {
   private finaldata = [];
-  private apiurl = "http://localhost:3000/users";
+  private geturl = "http://localhost:3000/users";
   private deleteurl = "http://localhost:3000/users/";
   // TO - DO
   private posturl = "http://localhost:3000/users";
@@ -26,8 +21,9 @@ export class MyserviceService {
   constructor(private http: HttpClient) { }
   
   getData() {
-     return this.http.get(this.apiurl);
+     return this.http.get(this.geturl);
   }
+
   postData(formData) {
     console.log(formData)
       this.http.post(this.posturl, JSON.stringify(formData), this.options).subscribe(
@@ -42,16 +38,16 @@ export class MyserviceService {
       );   
   }
 
-    putData(formData) {
-      this.http.put(this.puturl, formData).subscribe(
-        (res) => {
-          console.log(res)
-          alert ("Details updated successfully!");
-          window.open("/customers","_self")
-        },
-        (err) => console.log(err)
-      );
-    }
+  putData(formData) {
+    this.http.put(this.puturl, formData).subscribe(
+      (res) => {
+        console.log(res)
+        alert ("Details updated successfully!");
+        window.open("/customers","_self")
+      },
+      (err) => console.log(err)
+    );
+  }
 
   deleteData(id){
     this.http.delete(this.deleteurl+id).subscribe(
@@ -64,4 +60,5 @@ export class MyserviceService {
         }
     );   
   }
+
 }

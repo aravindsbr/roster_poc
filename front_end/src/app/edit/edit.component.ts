@@ -18,12 +18,13 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      name: [''],phone_no: [''],email: [''],city:[''], dob:[''], status:['']
+      id: [''],name: [''],phone_no: [''],email: [''],city:[''], dob:[''], status:['']
     });
   }
 
   Onsubmitform(){
     const formData = new FormData();
+    formData.append('id', this.form.get('id').value);
     formData.append('name', this.form.get('name').value);
     formData.append('phone_no', this.form.get('phone_no').value);
     formData.append('email', this.form.get('email').value);
@@ -34,8 +35,6 @@ export class EditComponent implements OnInit {
     // TO - DO
     this.myservice.putData(formData);
 
-    // alert ("Details updated successfully!");
-    // window.open("/customers","_self")
   }
 }
 

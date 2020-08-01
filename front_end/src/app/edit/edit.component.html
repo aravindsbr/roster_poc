@@ -3,20 +3,29 @@
 
 <form class="input_form" [formGroup]="form" (ngSubmit)="Onsubmitform()">
 
-  <mat-form-field id="name" appearance="outline">
+  <mat-form-field id="id" appearance="outline">
+    <mat-label>ID</mat-label>
+    <input matInput formControlName="id" required>
+  </mat-form-field>
+  
+  <mat-form-field id="name" appearance="outline" style="margin-left: 10%;" >
     <mat-label>Customer Name</mat-label>
     <input matInput formControlName="name" required>
   </mat-form-field>
 
-  <mat-form-field id="phone_no" appearance="outline" style="margin-left: 10%;" >
+  <br>
+
+  <mat-form-field id="phone_no" appearance="outline" >
     <mat-label>Contact number</mat-label>
     <input matInput formControlName="phone_no" type="number" maxlength="10" required> 
   </mat-form-field>
 
-  <mat-form-field id="email" appearance="outline" style="margin-left: 10%;">
+  <mat-form-field id="email" appearance="outline" style="margin-left: 10%;" >
     <mat-label>Email ID</mat-label>
     <input matInput formControlName="email" placeholder="xyz@domain.com" required>
-  </mat-form-field><br>
+  </mat-form-field>
+
+  <br>
 
   <mat-form-field id="city"  appearance="outline">
     <mat-label>City</mat-label>
@@ -35,6 +44,7 @@
     <mat-label>Date of birth</mat-label>
     <input type="date" formControlName="dob" matInput>
   </mat-form-field>
+
   <br>
 
   <mat-radio-group id="status" formControlName="status" required>
@@ -43,9 +53,10 @@
     <mat-radio-button value="Active">Active</mat-radio-button>
     <mat-radio-button style="margin-left: 2%;" value="Inactive">Inactive</mat-radio-button>
     </div>
-  </mat-radio-group><br>
-
+  </mat-radio-group>
   
+  <br>
+
 <div>
   <button mat-raised-button id="save-submit" ><mat-icon>save</mat-icon> Save</button>
 </div><br>
