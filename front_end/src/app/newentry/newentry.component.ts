@@ -32,10 +32,12 @@ export class NewentryComponent implements OnInit {
     formData.append('dob', this.form.get('dob').value);
     formData.append('status', this.form.get('status').value);
     
-    // formData.append('Cigna_Team_Lead', this.form.get('Cigna_Team_Lead').value);
     
-    // formData.append('Cigna_Delivery_Lead', this.form.get('Cigna_Delivery_Lead').value);
-    // formData.append('Accenture_Designation', this.form.get('Accenture_Designation').value);
+
+    // TO - DO
     this.myservice.postData(formData);
+
+    // alert ("Details added successfully!");
+    // window.open("/customers","_self")
   }
 }

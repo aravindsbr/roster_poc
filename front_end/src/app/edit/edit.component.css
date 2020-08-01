@@ -1,16 +1,8 @@
 .text{
-    margin-left: 39%;
     font-size:x-large;
-    font-style: italic;
     font-weight: bolder; 
-}
-
-.sub_text2{
-    margin-left: 20%;
-    font-size: small;
-    font-style: italic;
-    font-weight: 600; 
-    color: maroon;
+    /* margin-left: 39%; */
+    text-align: center;
 }
 
 #tab{
@@ -20,12 +12,12 @@
     font-size:large;
 }
 
-.update_form{
+.input_form{
     margin-left: 20%;
     margin-top: 5%;
 }
 
-#save-update{
+#save-submit{
     margin-left: 75%;
 }
 
@@ -34,6 +26,6 @@
 }
 
 .mat-raised-button{
-    background-color: #3f51b5;
+    background-color: #47d147;
     color: white; 
 }

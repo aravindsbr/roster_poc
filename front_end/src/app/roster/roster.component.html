@@ -1,3 +1,4 @@
+<div class="total">
 <div>
       <p class="toolbar_text"> View Customers Data</p>   
 </div>
@@ -9,15 +10,10 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Search with any value from below table">
     </mat-form-field>
 
-    <button mat-flat-button id="reset" color="warn" (click)="resetFilters()" >Reset</button>  
+    <button mat-flat-button id="reset" (click)="resetFilters()" >Reset</button>  
     <button mat-raised-button id = "addnewentry" a routerLink = "/newentry"><mat-icon>person_add</mat-icon> Add New Entry</button> <router-outlet></router-outlet>
-      <!-- <button mat-raised-button id="downloadbutton" matTooltip="Export filtered data" matTooltipPosition="above"
-      (click)="exportexcel()"><mat-icon>play_for_work</mat-icon>Export Filtered Data</button>
-      <button mat-raised-button id="downloadbutton2" matTooltip="Export all data" matTooltipPosition="above"
-      (click)="exportexcel1()"><mat-icon>cloud_download</mat-icon> Export All</button> -->
+     
   </div>
-  
-<!-- Above are new lines -->
 
 <div class="filter-table">
     <mat-table id="emp-table" [dataSource]="dataSource"  matSort class="mat-elevation-z20">
@@ -53,24 +49,25 @@
         <td mat-cell *matCellDef="let item"> {{item.status}} </td>
       </ng-container>
 
-      <!-- <ng-container matColumnDef="star">
+      <ng-container matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let item">
           <button mat-raised-button id="edit" a routerLink = "/edit"><mat-icon [inline]="true">edit</mat-icon>Edit</button>
           <router-outlet></router-outlet>
         </td>
-      </ng-container> -->
+      </ng-container>
 
-      <!-- <ng-container matColumnDef="Cigna_mail_id" >
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cigna Email-ID </th>
-        <td mat-cell *matCellDef="let item"> {{item.Cigna_mail_id}} </td>
-      </ng-container> -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let item">
+          <button mat-raised-button (click) = handleDelete(item.name) id="delete"><mat-icon>delete</mat-icon></button>
+          <router-outlet></router-outlet>
+        </td>
+      </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
     </mat-table> 
-    <!-- <button mat-raised-button>Edit</button> -->
-    <button mat-raised-button id="delete"><mat-icon>delete</mat-icon> Delete</button>
 
   </div>
  
@@ -78,3 +75,4 @@
     <mat-paginator id = "pagin" [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons style="color: black;"></mat-paginator>
   </div>
 
+</div>

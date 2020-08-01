@@ -20,7 +20,7 @@ export class RosterComponent implements OnInit {
 
   title = 'myapp1';
   filterValues = {}; //newly added for filter
-  displayedColumns: string[] = ["name","phone_no","email","city","dob","status"]
+  displayedColumns: string[] = ["name","phone_no","email","city","dob","status","edit","delete"]
   dataSource : MatTableDataSource<UserData>;
   filterSelectObj = []; //newly added for filter
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -61,6 +61,9 @@ export class RosterComponent implements OnInit {
     this.dataSource.filter = "";
   }
 
+  handleDelete(name){
+    alert("Delete successfully for "+name)
+  }
   
   //-------for Global filter--------.
 

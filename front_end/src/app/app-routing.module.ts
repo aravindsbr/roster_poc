@@ -10,7 +10,7 @@ import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
-  {path:"roster", component:RosterComponent}, 
+  {path:"customers", component:RosterComponent}, 
   {path:"shiftallowance", component:ShiftallowanceComponent}, 
   {path:"newentry", component:NewentryComponent},
   {path:"edit", component:EditComponent}

@@ -1,14 +1,9 @@
 <div>
   <mat-toolbar >
-    <img src="./assets/images/logo2.png" style="width: 5%; height: 95%;">
-    <p class="toolbar_text">TrackMe4Cigna</p>
-    <button  mat-icon-button id ="accountcircle" >
-      <mat-icon [inline]="true">account_circle</mat-icon> </button>   
+    <p class="toolbar_text">Demo App</p>
   </mat-toolbar>
-  <button mat-raised-button id = "home" a routerLink = "/home"><mat-icon>home</mat-icon>Home</button>
-  <button mat-raised-button id = "roster" a routerLink = "/roster"><mat-icon>assignment</mat-icon> Roster Management</button>
-  <button mat-raised-button  id = "shiftallowance" a routerLink = "/shiftallowance">Shift Allowance</button>
+  <button mat-raised-button id = "roster" a routerLink = "/customers"><mat-icon>assignment</mat-icon> View data</button>
+  
 <router-outlet></router-outlet>
 
-<!-- <footer class="footer_text"> © Copyright 2020. All Rights Reserved.</footer> -->
 </div>

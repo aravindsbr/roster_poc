@@ -3,7 +3,7 @@
     {
       "name":"Aravinds",
       "phone_no":"8293741290",
-      "email":"myemail@gmail.com",
+      "email":"aravinds@gmail.com",
       "city":"Madurai",
       "dob":"1/1/1996",
       "status":"active"
@@ -11,11 +11,35 @@
    {
       "name":"Sowmiya",
       "phone_no":"9812602841",
-      "email":"heremail@gmail.com",
+      "email":"sowmiya@gmail.com",
       "city":"Ooty",
       "dob":"2/2/1996",
+      "status":"inactive"
+   },
+   {
+      "name":"Praveen",
+      "phone_no":"8220320254",
+      "email":"praveen@gmail.com",
+      "city":"Ooty",
+      "dob":"3/3/1996",
       "status":"active"
-   }
+   },
+   {
+    "name":"Rajkumar",
+    "phone_no":"9842176294",
+    "email":"rajkumar@gmail.com",
+    "city":"Coimbatore",
+    "dob":"4/4/1996",
+    "status":"active"
+  },
+  {
+    "name":"Reshma",
+    "phone_no":"9603282651",
+    "email":"reshma@gmail.com",
+    "city":"Kochin",
+    "dob":"5/5/1996",
+    "status":"inactive"
+ }
   ]
   
 }

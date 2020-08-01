@@ -14,23 +14,25 @@ import {Router} from '@angular/router';
 export class MyserviceService {
   private finaldata = [];
   private apiurl = "http://localhost:3000/users";
+  // TO - DO
   private posturl = "http://localhost:3000/users";
-  private puturl = "http://127.0.0.1:5200/update/";
+  private puturl = "http://localhost:3000/users";
   
+  private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
+
   form: FormGroup; 
 
   constructor(private http: HttpClient) { }
-
+  
   getData() {
      return this.http.get(this.apiurl);
   }
   postData(formData) {
     console.log(formData)
-      this.http.post(this.posturl, formData).subscribe(
+      this.http.post(this.posturl, JSON.stringify(formData), this.options).subscribe(
         (res) => {
-            alert ("Details added successfully");
-            // window.location.reload() 
-               window.open("/roster","_self")
+          alert ("Details added successfully!");
+          window.open("/customers","_self")
         },
 
         (err) => {
@@ -41,7 +43,11 @@ export class MyserviceService {
 
     putData(formData) {
       this.http.put(this.puturl, formData).subscribe(
-        (res) => console.log(res),
+        (res) => {
+          console.log(res)
+          alert ("Details updated successfully!");
+          window.open("/customers","_self")
+        },
         (err) => console.log(err)
       );
     }

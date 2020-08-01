@@ -1,297 +1,57 @@
 <div>
-    <p class="text">Update Employee Details</p>
-      
-  <!-- added formgrp and ngsubmit at top and formControlName in each field -->
-  <form class="update_form" [formGroup]="updateform" (ngSubmit)="Onupdateform()"> <!--[formGroup]="form" (ngSubmit)="submitForm()"-->
-  
-   
-  <mat-form-field id="SAP_ID" appearance="outline" >
-    <mat-label>SAP ID</mat-label>
-    <input matInput formControlName="SAP_ID" type="number" maxlength="8" required> 
+  <p class="text">Update customer details</p>
+
+<form class="input_form" [formGroup]="form" (ngSubmit)="Onsubmitform()">
+
+  <mat-form-field id="name" appearance="outline">
+    <mat-label>Customer Name</mat-label>
+    <input matInput formControlName="name" required>
   </mat-form-field>
 
-  <div>
-    <button mat-raised-button id="save-update">Update</button>
-  </div>
-  
-  </form>
-  
-  <button mat-raised-button id="exit" a routerLink = "/roster" style="margin-left: 90%;">Exit</button>
-  <router-outlet></router-outlet>
-  
-  </div>
-<!-- 
-  
-  <mat-form-field id="Vertical"  appearance="outline" style="margin-left: 10%;">
-    <mat-label>Vertical</mat-label>
-    <mat-select formControlName="Vertical" required>
+  <mat-form-field id="phone_no" appearance="outline" style="margin-left: 10%;" >
+    <mat-label>Contact number</mat-label>
+    <input matInput formControlName="phone_no" type="number" maxlength="10" required> 
+  </mat-form-field>
+
+  <mat-form-field id="email" appearance="outline" style="margin-left: 10%;">
+    <mat-label>Email ID</mat-label>
+    <input matInput formControlName="email" placeholder="xyz@domain.com" required>
+  </mat-form-field><br>
+
+  <mat-form-field id="city"  appearance="outline">
+    <mat-label>City</mat-label>
+    <mat-select formControlName="city" required>
       <mat-option>-- Select Vertical --</mat-option>
-      <mat-option value="Provider">Provider</mat-option>
-      <mat-option value="Pharmacy">Pharmacy</mat-option>
-      <mat-option value="Customer">Customer</mat-option>
-      <mat-option value="Healthplan">Healthplan</mat-option>
-      <mat-option value="CHE">CHE</mat-option>
-      <mat-option value="Sales and Distribution">Sales and Distribution</mat-option>
-      <mat-option value="na">NA</mat-option>
+      <mat-option value="Chennai">Chennai</mat-option>
+      <mat-option value="Madurai">Madurai</mat-option>
+      <mat-option value="Coimbatore">Coimbatore</mat-option>
+      <mat-option value="Trichy">Trichy</mat-option>
+      <mat-option value="Ooty">Ooty</mat-option>
+      <mat-option value="Others">Others</mat-option>
     </mat-select>
   </mat-form-field>
-  
-  <mat-form-field id="Additional_Skills" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Additional Skills(with prior experience)</mat-label>
-    <textarea matInput formControlName="Additional_Skills" required></textarea>
-    </mat-form-field>
-    
+
+  <mat-form-field id="dob" appearance="outline" style="margin-left: 10%;">
+    <mat-label>Date of birth</mat-label>
+    <input type="date" formControlName="dob" matInput>
+  </mat-form-field>
   <br>
-  
-  <mat-form-field id="lanid" appearance="outline">
-    <mat-label>LAN ID</mat-label>
-    <input matInput formControlName="lanid"  maxlength="6" required>
-  </mat-form-field>
-  
-  <mat-form-field id="Scrum_Team" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Scrum Team</mat-label>
-    <mat-select formControlName="Scrum_Team" required>
-      <mat-option>-- Select Scrum Team --</mat-option>
-      <mat-option value="devops">FEOD_DevOps Guild</mat-option>
-      <mat-option value="kpi">CCD KPI</mat-option>
-      <mat-option value="client360">SD_CURE/Client360</mat-option>
-      <mat-option value="clinical_int">EAD_CCW Clinical Integration</mat-option>
-      <mat-option value="etc">And So on...</mat-option>
-      <mat-option value="NA">NA</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  <mat-form-field id="Primary_Skill_CAM" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Primary Skill(as per CAMS)</mat-label>
-    <input matInput formControlName="Primary_Skill_CAM" required>
-  </mat-form-field>
-  
-  <br>
-  
-  <mat-form-field id="pinid" appearance="outline">
-    <mat-label>PIN ID</mat-label>
-    <input matInput formControlName="pinid" type="number" required>
-  </mat-form-field>
-  
-  <mat-form-field id="Cigna_Team_Lead" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Cigna Team Lead</mat-label>
-    <mat-select formControlName="Cigna_Team_Lead" required>
-      <mat-option>-- Select Cigna Team Lead --</mat-option>
-      <mat-option value="jack">Jack Dobbs</mat-option>
-      <mat-option value="sanjay">Sanjay Sharma</mat-option>
-      <mat-option value="durga">Durga Nigudkar</mat-option>
-      <mat-option value="lisa">Lisa Aukerman</mat-option>
-      <mat-option value="tara">Tara Lovelace</mat-option>
-      <mat-option value="NA">NA</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  <mat-form-field id="Secondary_skill_CAM" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Secondary Skill(as per CAMS)</mat-label>
-    <input matInput formControlName="Secondary_skill_CAM" required>
-  </mat-form-field>
-  
-  <br>
-  
-  <mat-form-field id="eid_as_per_roaster" appearance="outline">
-    <mat-label>Enterprise ID</mat-label>
-    <input matInput formControlName="eid_as_per_roaster" type="text"  required>
-  </mat-form-field>
-  
-  <mat-form-field id="Cigna_Delivery_Lead" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Cigna Delivery Lead</mat-label>
-    <mat-select formControlName="Cigna_Delivery_Lead" required>
-      <mat-option>-- Select Cigna Delivery Lead --</mat-option>
-      <mat-option value="Bob Krass">Bob Krass</mat-option>
-      <mat-option value="Vinay Mogali">Vinay Mogali</mat-option>
-      <mat-option value="Tanya Mcnamar">Tanya Mcnamar</mat-option>
-      <mat-option value="Jairam Iyengar">Jairam Iyengar</mat-option>
-      <mat-option value="Christopher Rucci">Christopher Rucci</mat-option>
-      <mat-option value="NA">NA</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  <mat-form-field id="Accenture_Designation" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Accenture Designation</mat-label>
-    <mat-select formControlName="Accenture_Designation" required>
-      <mat-option>-- Select Designation --</mat-option>
-      <mat-option value=" Level 13">Level 13</mat-option>
-      <mat-option value=" Level 12">Level 12</mat-option>
-      <mat-option value="Level 11">Level 11</mat-option>
-      <mat-option value="Level 10">Level 10</mat-option>
-      <mat-option value="Level 9">Level 9</mat-option>
-      <mat-option value="Level 8">Level 8</mat-option>
-      <mat-option value="Level 7">Level 7</mat-option>
-      <mat-option value="Level 6">Level 6</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  <br>
-  
-  <mat-form-field id="username" appearance="outline">
-    <mat-label>Employee Name</mat-label>
-    <input matInput formControlName="username" required>
-  </mat-form-field>
-  
-  <mat-form-field id="Shift_Timings" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Shift Timings</mat-label>
-    <mat-select formControlName="Shift_Timings" required>
-      <mat-option>-- Select Shift --</mat-option>
-      <mat-option value="8:30-6:30">General Shift (8:30Am-6:30Pm)</mat-option>
-      <mat-option value="10:30-8:30">Shift A (10:30Am-8:30Pm)</mat-option>
-      <mat-option value="12-10">Shift B (12Pm-10Pm)</mat-option>
-      <mat-option value="11-7)">Shift C (Beyond 1Am)</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  <mat-radio-group id="Location" formControlName="Location" style="margin-left: 10%;" required>
-    <mat-label>Location:</mat-label>
-    <div style="margin-left: 55%;">
-    <mat-radio-button value="Offshore">Offshore</mat-radio-button>&nbsp;
-    <mat-radio-button value="Onshore" >Onshore</mat-radio-button>&nbsp;
-    <mat-radio-button value="NearShore">NearShore</mat-radio-button> 
-  </div>
-  </mat-radio-group>
-  
-  <br>
-  
-  <mat-radio-group id="Gender" formControlName="Gender" required>
-    <mat-label>Select Gender:</mat-label>
+
+  <mat-radio-group id="status" formControlName="status" required>
+    <mat-label>Status:</mat-label>
     <div style="margin-left: 2%;">
-    <mat-radio-button value="Male">Male</mat-radio-button> <br>
-    <mat-radio-button value="Female">Female</mat-radio-button>
+    <mat-radio-button value="Active">Active</mat-radio-button>
+    <mat-radio-button style="margin-left: 2%;" value="Inactive">Inactive</mat-radio-button>
     </div>
-  </mat-radio-group>
-  
-  <mat-form-field id="Transport" appearance="outline" style="margin-left: 26%;" required>
-    <mat-label>Transport</mat-label>
-    <mat-select formControlName="Transport" required>
-      <mat-option>--Select Transport Mode--</mat-option>
-      <mat-option value="Office Cab">Office Cab</mat-option>
-      <mat-option value="Personal vehicle">Personal vehicle</mat-option>
-      <mat-option value="Office Shuttle">Office Shuttle</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  <mat-form-field id="Project_City_Location" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Project City Location</mat-label>
-    <mat-select formControlName="Project_City_Location" required>
-      <mat-option>--Project Location--</mat-option>
-      <mat-option value="Chennai">Offshore - Chennai</mat-option>
-      <mat-option value="Hyderabad">Offshore - Hyderabad</mat-option>
-      <mat-option value="Bangalore">Offshore - Bangalore</mat-option>
-      <mat-option value="Monterrey">NearShore - Monterrey</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-   <br>
-  
-   <mat-form-field id="Accenture_Supervisor" appearance="outline">
-    <mat-label>Accenture Supervisor</mat-label>
-    <input matInput formControlName="Accenture_Supervisor" type="text" required>
-  </mat-form-field>
-  
-  <mat-form-field id="Home_Location_Area" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Home Location Area</mat-label>
-    <input matInput formControlName="Home_Location_Area" required>
-  </mat-form-field>
-  
-  <mat-form-field id="Cigna_mail_id" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Cigna Email ID</mat-label>
-    <input matInput formControlName="Cigna_mail_id" placeholder="xyz@domain.com" required > 
-  </mat-form-field>
-  
-  <br>
-  
-  <mat-form-field id="Bay" appearance="outline">
-    <mat-label>Bay No.</mat-label>
-    <mat-select formControlName="Bay" required>
-      <mat-option>-- Select Bay No. --</mat-option>
-      <mat-option value="Bay 3">Bay 3</mat-option>
-      <mat-option value="Bay 7">Bay 7</mat-option>
-      <mat-option value="Bay 8">Bay 8</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  <mat-form-field id="Cigna_Role" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Cigna Role</mat-label>
-    <input matInput formControlName="Cigna_Role" required>
-  </mat-form-field>
-  
-  <mat-form-field id="Specialization" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Specialization</mat-label>
-    <mat-select formControlName="Specialization" required>
-      <mat-option>-- Select Specialization --</mat-option>
-      <mat-option value="B.E">B.E</mat-option>
-      <mat-option value="B.Tech">B.Tech</mat-option>
-      <mat-option value="M.E">M.E</mat-option>
-      <mat-option value="M.Tech">M.Tech</mat-option>
-      <mat-option value="MCA">MCA</mat-option>
-      <mat-option value="M.sc">M.sc</mat-option>
-      <mat-option value="others"><input matInput placeholder="For others specify here"></mat-option> 
-    </mat-select>
-  </mat-form-field>
-  
-  <br>
-  
-  <mat-form-field id="New_Seat_No" appearance="outline">
-    <mat-label>Seat No.</mat-label>
-    <input matInput formControlName="New_Seat_No" required>
-  </mat-form-field>
-  
-  <mat-form-field id="Primary_Skill" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Primary Skill (as per project)</mat-label>
-    <input matInput formControlName="Primary_Skill" required>
-  </mat-form-field>
-  
-  
-  <mat-form-field id="Qualification" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Qualification</mat-label>
-    <mat-select formControlName="Qualification" required>
-      <mat-option>-- Select Qualification --</mat-option>
-      <mat-option value="CSE">CSE</mat-option>
-      <mat-option value="IT">IT</mat-option>
-      <mat-option value="Mechanical">Mechanical</mat-option>
-      <mat-option value="Mechatorincs">Mechatorincs</mat-option>
-      <mat-option value="EEE">EEE</mat-option>
-      <mat-option value="ECE">ECE</mat-option>
-      <mat-option value="Production">Production</mat-option>
-      <mat-option value="Others"><input matInput placeholder="For others specify here"></mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  <br>
-  
-  <mat-radio-group id="Billability" formControlName="Billability" required>
-    <mat-label>Billability:</mat-label>&nbsp;
-    <div>
-    <mat-radio-button value="Billable">Billable</mat-radio-button> &nbsp;
-    <mat-radio-button value="Non-Billable">Non-Billable</mat-radio-button>
-    </div>
-  </mat-radio-group>
-  
-  <mat-form-field id="Secondary_skill" appearance="outline" style="margin-left: 26%;">
-    <mat-label>Secondary Skill (as per project)</mat-label>
-    <input matInput formControlName="Secondary_skill" required>
-  </mat-form-field>
-  
-  <mat-form-field id="Contact_Number" appearance="outline" style="margin-left: 10%;">
-    <mat-label>Contact Number</mat-label>
-    <input matInput type="number" formControlName="Contact_Number" required>
-  </mat-form-field>
-  <br>
-  
-  <h3 class="sub_text2">*All the above fields are mandatory. Mark as NA - if no input is applicable</h3>
-  
-  <div>
-    <button mat-raised-button id="save-update">Update</button>
-  </div>
-  
-  </form>
-  
-  <button mat-raised-button id="exit" a routerLink = "/roster" style="margin-left: 90%;">Exit</button>
-  <router-outlet></router-outlet>
-  
-  </div> -->
+  </mat-radio-group><br>
 
   
+<div>
+  <button mat-raised-button id="save-submit" ><mat-icon>save</mat-icon> Save</button>
+</div><br>
+
+</form>
+
+<router-outlet></router-outlet>
+
+</div>
