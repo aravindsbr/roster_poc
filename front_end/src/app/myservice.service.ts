@@ -14,6 +14,7 @@ import {Router} from '@angular/router';
 export class MyserviceService {
   private finaldata = [];
   private apiurl = "http://localhost:3000/users";
+  private deleteurl = "http://localhost:3000/users/";
   // TO - DO
   private posturl = "http://localhost:3000/users";
   private puturl = "http://localhost:3000/users";
@@ -51,4 +52,16 @@ export class MyserviceService {
         (err) => console.log(err)
       );
     }
+
+  deleteData(id){
+    this.http.delete(this.deleteurl+id).subscribe(
+      (res) => {
+        window.open("/customers","_self")
+      },
+
+      (err) => {
+        console.log(err)   
+        }
+    );   
+  }
 }

@@ -3,6 +3,12 @@
 
 <form class="input_form" [formGroup]="form" (ngSubmit)="Onsubmitform()">
 
+  <mat-form-field id="id" appearance="outline">
+    <mat-label>ID</mat-label>
+    <input matInput formControlName="id" required>
+  </mat-form-field>
+  <br>
+
   <mat-form-field id="name" appearance="outline">
     <mat-label>Customer Name</mat-label>
     <input matInput formControlName="name" required>

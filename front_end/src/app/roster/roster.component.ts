@@ -61,8 +61,10 @@ export class RosterComponent implements OnInit {
     this.dataSource.filter = "";
   }
 
-  handleDelete(name){
-    alert("Delete successfully for "+name)
+  handleDelete(id){
+    this.myservice.deleteData(id);
+    alert("Delete successfully for "+id)
+    
   }
   
   //-------for Global filter--------.
