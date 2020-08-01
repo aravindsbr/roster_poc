@@ -1,12 +1,10 @@
 .text{
     font-size:x-large;
     font-weight: bolder; 
-    /* margin-left: 39%; */
     text-align: center;
 }
 
 #tab{
-   
     color: white;
     font-weight: 500;
     font-size:large;
